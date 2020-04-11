@@ -1,0 +1,9 @@
+@media screen and (max-width: 1200px){
+    .main-content-section-search{
+        width: 850px;
+    }
+
+    .header-block-inside{
+        width: 750px;
+    }
+}
