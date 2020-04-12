@@ -200,3 +200,7 @@ $('.main-section-news-item').click(function(){
 $('.first-part-search-field-result').click(function(){
   $.redirect('article', {'id': this.id, 'table' : $(this).attr('dt')});
 })
+
+$(document).ready(function(){
+  
+})

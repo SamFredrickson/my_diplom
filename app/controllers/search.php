@@ -27,7 +27,7 @@ _HTML_;
            if('POST' == $_SERVER['REQUEST_METHOD']){
             $db = Database::Connect();
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $q = $db->query("SELECT post_date, id, title, image_path FROM static_content WHERE title LIKE '%$_POST[search_text]%'");
+            $q = $db->query("SELECT post_created, id, title, image_path FROM static_content WHERE title LIKE '%$_POST[search_text]%'");
             
             return $q;
 
@@ -44,7 +44,7 @@ private function search_in_dynamic(){
        if('POST' == $_SERVER['REQUEST_METHOD']){
         $db = Database::Connect();
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $q = $db->query("SELECT post_date, id, title, image_path FROM dynamic_content WHERE title LIKE '%$_POST[search_text]%'");
+        $q = $db->query("SELECT post_created, id, title, image_path FROM dynamic_content WHERE title LIKE '%$_POST[search_text]%'");
         
         return $q;
 
@@ -62,12 +62,12 @@ private function search_in_dynamic(){
 
         if($static != null){
             while($row = $static->fetch())
-            $this->print_post("$row[post_date]", "$row[title]", "$row[image_path]", "$row[id]", "static_content");
+            $this->print_post("$row[post_created]", "$row[title]", "$row[image_path]", "$row[id]", "static_content");
         }
 
         if($dynamic != null){
             while($row = $dynamic->fetch())
-            $this->print_post("$row[post_date]", "$row[title]", "$row[image_path]", "$row[id]", "dynamic_content");
+            $this->print_post("$row[post_created]", "$row[title]", "$row[image_path]", "$row[id]", "dynamic_content");
         }
     }
 }

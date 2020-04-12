@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../../itnewssite/public/js/sample/css.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../itnewssite/public/css/style.css">
     <link rel="stylesheet" href="../../../itnewssite/public/css/media.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -76,7 +77,23 @@
        <div class="main-section-dynamic-show-more">
            Показать ещё
        </div>
+       <div id="editor">
+            
+       </div>
    </section>
+   <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
+<script>
+	ClassicEditor
+		.create( document.querySelector( '#editor' ), {
+			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+		} )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( err => {
+			console.error( err.stack );
+		} );
+</script>
     <script src="../../../itnewssite/public/js/index.js"></script>
     <script src="../../../itnewssite/public/js/ajax_magic.js"></script></body>
 </html>
