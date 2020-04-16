@@ -201,6 +201,100 @@ $('.first-part-search-field-result').click(function(){
   $.redirect('article', {'id': this.id, 'table' : $(this).attr('dt')});
 })
 
-$(document).ready(function(){
-  
+$('#submit_admin').click(function(){
+  $.ajax({
+    url: '../../itnewssite/app/scripts/insert.php',
+    type: "POST",
+    data: {
+
+      "date"  : $("#date").val(),
+      "time"  : $("#time").val(),
+      "title" : $("#title").val(),
+      "file"  : $("#file").val().split(/(\\|\/)/g).pop(),
+      "editor" : $("#editor").html()
+
+     },
+    success: alert('Добавлено'),
+    dataType: 'text'
+  });
+})
+
+$(".admin_delete").click(function(){
+  var res = confirm("Вы действительно хотите удалить?");
+  if(res){
+    
+      $.ajax({
+        url: '../../itnewssite/app/scripts/delete.php',
+        type: "POST",
+        data: {
+    
+          "table"  : $(this).parent().parent().attr("table"),
+          "id"     : $(this).parent().parent().attr("id"),
+        },
+        success: $(this).parent().parent().hide(),
+        dataType: 'text'
+
+      });
+
+  }
+})
+
+$(".admin_edit").click(function(){
+  $.ajax({
+    url: '../../itnewssite/app/scripts/select.php',
+    type: "POST",
+    data: { 
+
+      "id" : $(this).parent().parent().attr("id"),
+      "table" : $(this).parent().parent().attr("table")
+
+     },
+    success: function(data){
+        let decoded = JSON.parse(data);
+        $.redirect('update', {
+
+          'id' : decoded['id'],
+          'table' : decoded['table'],
+          'title' : decoded['title'],
+          'img'   : decoded['img'], 
+          'content' : decoded['content'],
+          'date' : decoded['date'].split(' ')[0],
+          'time' : decoded['date'].split(' ')[1]
+
+       })
+    },
+    dataType: 'text'
+
+  });
+})
+
+$('#update_admin').click(function(){
+  $.ajax({
+    url: '../../itnewssite/app/scripts/update.php',
+    type: "POST",
+    data: {
+
+      "id" : $("#update_id").text(),
+      "table" : $("#update_table").text(),
+      "date"  : $("#date").val(),
+      "time"  : $("#time").val(),
+      "title" : $("#title").val(),
+      "img"  : function(){
+           if(document.querySelector("#file").value != ""){
+              return document.querySelector("#file").value.split(/(\\|\/)/g).pop();
+           }else{
+             return document.querySelector("#file").attributes.value.value;
+           }
+      },
+      "content" : $("#editor").html()
+
+     },
+
+    success: function(){
+      setTimeout(() => {
+        $.redirect('article', {'id': $("#update_id").text(), 'table' : $("#update_table").text()})
+      }, 500);
+    },
+    dataType: 'text'
+  });
 })

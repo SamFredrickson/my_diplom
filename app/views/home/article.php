@@ -38,8 +38,8 @@
                     <div class="first-part-image">
                         <img src="../../../itnewssite/public/images/posts/<?php print $data[0][2]; ?>" alt="">
                     </div>
-                    <div class="first-part-content">
-                          <?php $this->display_content($data[0][3]); ?>                   
+                    <div class="first-part-content">                       
+                          <?php $this->display_content($data[0][3]); ?>
                     </div>
             </div>
             <div class="second_part_search"></div>

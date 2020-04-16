@@ -6,11 +6,14 @@ class Session{
     }
 
     public function redirect(){
-        
+        header("Location: index");
     }
 
     public function login(){
-
+        if(!isset($_SESSION['user'])){
+            $_SESSION['user'] = 'admin';
+            header("Location: panel");
+        }
     }   
 
     public function error(){

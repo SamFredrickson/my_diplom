@@ -77,23 +77,8 @@
        <div class="main-section-dynamic-show-more">
            Показать ещё
        </div>
-       <div id="editor">
-            
-       </div>
    </section>
-   <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
-<script>
-	ClassicEditor
-		.create( document.querySelector( '#editor' ), {
-			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
-		} )
-		.then( editor => {
-			window.editor = editor;
-		} )
-		.catch( err => {
-			console.error( err.stack );
-		} );
-</script>
     <script src="../../../itnewssite/public/js/index.js"></script>
-    <script src="../../../itnewssite/public/js/ajax_magic.js"></script></body>
+    <script src="../../../itnewssite/public/js/ajax_magic.js"></script>
+</body>
 </html>

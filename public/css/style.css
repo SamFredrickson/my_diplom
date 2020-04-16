@@ -400,3 +400,7 @@ body { background: #F7F7F7;}
 .first-part-search-field-result:last-child{
     margin-bottom: 11%;
 }
+
+.first-part-content img{
+    width: 100%;
+}

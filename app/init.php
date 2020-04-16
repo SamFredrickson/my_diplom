@@ -5,4 +5,4 @@ require_once 'core/Controller.php';
 require_once 'core/Currency.php';
 require_once 'core/Database.php';
 require_once 'core/config.php';
-require_once 'core/session.php';
+require_once 'core/Session.php';
