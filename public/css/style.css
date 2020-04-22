@@ -404,3 +404,27 @@ body { background: #F7F7F7;}
 .first-part-content img{
     width: 100%;
 }
+
+.edit_tools{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.edit_tools div:not(:first-child){
+    margin-left: 10px;
+}
+
+.edit_tools div button{
+    height: 40px;
+    width: 150px;
+    border: 0;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.edit_tools .edit_tools_delete{
+    background: orangered;
+}

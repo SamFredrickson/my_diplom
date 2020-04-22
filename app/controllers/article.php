@@ -36,4 +36,15 @@ print <<<_HTML_
 _HTML_;
 
     }
+
+    public function show_edit_tools($id, $table){
+        if(in_array('admin', $_SESSION)){
+            print <<<_HTML_
+<div class="edit_tools">
+<div><button class="edit_tools_update" id=$id table=$table>Изменить</button></div>
+<div><button class="edit_tools_delete" id=$id table=$table>Удалить</button></div>
+</div>
+_HTML_;
+        }
+    }
 }

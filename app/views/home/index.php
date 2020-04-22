@@ -75,7 +75,7 @@
            </div>
        </div>
        <div class="main-section-dynamic-show-more">
-           Показать ещё
+           (C) Copyright 2020
        </div>
    </section>
     <script src="../../../itnewssite/public/js/index.js"></script>

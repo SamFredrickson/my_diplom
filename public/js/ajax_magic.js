@@ -298,3 +298,55 @@ $('#update_admin').click(function(){
     dataType: 'text'
   });
 })
+
+$(".edit_tools_update").click(function(){
+  $.ajax({
+    url: '../../itnewssite/app/scripts/select.php',
+    type: "POST",
+    data: { 
+
+      "id" : $(this).attr("id"),
+      "table" : $(this).attr("table")
+
+     },
+    success: function(data){
+        let decoded = JSON.parse(data);
+        $.redirect('update', {
+
+          'id' : decoded['id'],
+          'table' : decoded['table'],
+          'title' : decoded['title'],
+          'img'   : decoded['img'], 
+          'content' : decoded['content'],
+          'date' : decoded['date'].split(' ')[0],
+          'time' : decoded['date'].split(' ')[1]
+
+       })
+    },
+    dataType: 'text'
+
+  });
+})
+
+$(".edit_tools_delete").click(function(){
+  var res = confirm("Вы действительно хотите удалить?");
+  if(res){
+    
+      $.ajax({
+        url: '../../itnewssite/app/scripts/delete.php',
+        type: "POST",
+        data: {
+    
+          "table"  : $(this).attr("table"),
+          "id"     : $(this).attr("id"),
+        },
+        success: function(data){
+            alert("Удалено");
+            location.href = "edit";
+        },
+        dataType: 'text'
+
+      });
+
+  }
+})

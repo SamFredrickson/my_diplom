@@ -30,7 +30,7 @@
             <div class="first_part_search">
                 <div class="first_part_search_wrapper">
                    <div class="first_part_search_wrapper_text">
-                        <div class="first-part-date"><?php print $data[0][4]; ?></div>
+                        <div class="first-part-date"><?php $d = new DateTime($data[0][4]); print $d->format("d  F yy h:i:s"); ?></div>
                         <div class="first-part-title"><?php print $data[0][1]; ?></div>
                    </div>
                 </div>
@@ -40,6 +40,7 @@
                     </div>
                     <div class="first-part-content">                       
                           <?php $this->display_content($data[0][3]); ?>
+                          <?php $this->show_edit_tools($data[0][0], $_POST['table']); ?>
                     </div>
             </div>
             <div class="second_part_search"></div>
