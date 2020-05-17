@@ -75,7 +75,8 @@
            </div>
        </div>
        <div class="main-section-dynamic-show-more">
-           (C) Copyright 2020
+           <div>E-mail: svae12@mail.ru</div>
+           <div>(C) Copyright 2020</div>
        </div>
    </section>
     <script src="../../../itnewssite/public/js/index.js"></script>

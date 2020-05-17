@@ -236,6 +236,7 @@ body { background: #F7F7F7;}
     border-top: 0.5px solid #DFDFE6;
     height: 100px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #555ee0;
@@ -245,6 +246,11 @@ body { background: #F7F7F7;}
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  }
 
+
+ .main-section-dynamic-show-more div{
+     padding-top: 10px;
+     padding-bottom: 5px;
+ }
  
 .main-content-section-search{
 
