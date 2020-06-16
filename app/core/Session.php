@@ -14,14 +14,6 @@ class Session{
             $_SESSION['user'] = 'admin';
             header("Location: panel");
         }
-    }   
-
-    public function error(){
-        
-    }
-
-    public function assign(){
-
     }
 }
 

@@ -17,7 +17,6 @@ class Edit extends Controller{
             }
 
         }catch(PDOException $e){
-
             print "Error: " . $e->getMessage();
         }
     }

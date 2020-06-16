@@ -17,7 +17,7 @@ class Home extends Controller{
             
             $db = Database::Connect();
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $q = $db->query("SELECT * FROM static_content");
+            $q = $db->query("SELECT * FROM static_content ORDER BY post_created desc");
             $rows = $q->fetchAll();
 
             return $rows;
@@ -42,7 +42,7 @@ _HTML_;
 
             $db = Database::Connect();
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $q = $db->query("SELECT id, title, image_path FROM dynamic_content");
+            $q = $db->query("SELECT id, title, image_path FROM dynamic_content ORDER BY post_created desc");
            
             while($row = $q->fetch())
             $this->print_post("$row[title]", "$row[image_path]", "$row[id]");

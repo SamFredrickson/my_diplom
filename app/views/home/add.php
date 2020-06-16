@@ -38,7 +38,7 @@
                 <div class="admin_right_content">
                     <div class="admin_right_date">
                         <input type="text" id='date' name="date" value=<?php print $date->format("yy-m-d"); ?>>
-                        <input type="text" id='time' name="time" value=<?php print $date->format("h:m:s"); ?>>
+                        <input type="text" id='time' name="time" value=<?php print $date->format("G:i:s"); ?>>
                     </div>
                     <div class="admin_right_title">
                         <input type="text" id="title" name="title">

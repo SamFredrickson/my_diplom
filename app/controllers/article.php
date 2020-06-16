@@ -2,7 +2,7 @@
 
 class Article extends Controller{
 
-    public function view($path, $data = array()){
+    protected function view($path, $data = array()){
         require_once '../app/views/' . $path . '.php';
     }
 
@@ -12,7 +12,7 @@ class Article extends Controller{
         else $this->view('home/article', $this->get_data());
     }
 
-    public function get_data(){
+    protected function get_data(){
         try{
 
             $db = Database::Connect();
@@ -27,7 +27,7 @@ class Article extends Controller{
         }
     }
 
-    public function display_content($data){
+    protected function display_content($data){
        
 print <<<_HTML_
         <div class ="text-block">
@@ -37,7 +37,7 @@ _HTML_;
 
     }
 
-    public function show_edit_tools($id, $table){
+    protected function show_edit_tools($id, $table){
         if(in_array('admin', $_SESSION)){
             print <<<_HTML_
 <div class="edit_tools">
